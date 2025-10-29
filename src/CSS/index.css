@@ -1,0 +1,964 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+body{
+    
+}
+.main-container{
+    height:100vh;
+    width:100%;
+   background: linear-gradient(to right, #ED2939, #ff4d5d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+}
+.container{
+
+    background-color: white;
+    height: 20rem;
+    width:18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.container .text-field{
+    width:16rem;
+    
+    text-align: center;
+   margin-left: 1rem;
+}
+.not-account-reg{
+    font-family: sans-serif;
+    text-align: center;
+    margin:0.5rem;
+}
+.container h2{
+    text-align: center;
+    font-family: sans-serif;
+    margin:0.5rem;
+   margin-bottom: 1rem;
+    color:rgb(125, 43, 226);
+}
+.container-signup{
+
+    background-color: white;
+    height: 24rem;
+    width:18rem;
+    text-align: center;
+}
+.container-signup h2{
+    text-align: center;
+    font-family: sans-serif;
+    margin:0.5rem;
+   margin-bottom: 1rem;
+    color:rgb(125, 43, 226);
+}
+.input-field{
+   
+}
+.text-field input{
+    padding:0.5rem;
+    margin:0.2rem;
+    font-size:1rem;
+    width:84%;
+     background-color: rgb(230, 230, 230);
+     border:none;
+     border-radius: 0.2rem;
+     
+}
+.text-field input::placeholder{
+    color:rgb(118, 118, 118);
+}
+
+.text-field select{
+    padding:0.5rem;
+    margin:0.2rem;
+    font-size:1rem;
+    width:90%;
+     background-color: rgb(230, 230, 230);
+     border:none;
+     border-radius: 0.2rem;
+     
+}
+
+.text-field select::placeholder{
+    color:rgb(118, 118, 118);
+}
+.roll{
+    margin-bottom: 0.2rem;
+}
+.text-field label{
+    margin:0.15rem;
+  
+    font-family: sans-serif;
+    float:left;
+     color:rgb(60, 60, 60);
+}
+.stu-log-btn button{
+    margin-top: -2rem;
+     background-color: rgb(82, 16, 235);
+    border:none;
+    color:white;
+    border-radius: 0.4rem;
+    width:89%;
+    padding:0.6rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight:500;
+}
+.signup-link p{
+    text-align: center;
+    font-family: sans-serif;
+    margin:1rem;
+    margin-top:1rem;
+}
+
+
+
+/* font page section is starting from here */
+.font-container{
+    height: 100vh;
+    width: 100vw;
+  background-color: white;
+}
+.font-main{
+    display: flex;
+    align-items: center;
+   height: 100vh;
+    width: 100vw;
+   
+}
+.font-image{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.font-image img{
+    height:500px;
+    width:auto;
+    overflow-y: hidden;
+}
+.font-text{
+    width: 60%;
+ background: linear-gradient(to right, #ED2939, #ff4d5d);
+
+     height: 100vh;
+     border-top-left-radius: 60% 90%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+.font-text p{
+    
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    color:white;
+}
+.font-p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #82002b 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 4rem;
+  font-family: sans-serif;
+  
+  margin:2rem;
+}
+.font-text button{
+    width:50%;
+    padding:0.5rem;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    border:none;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.join-with-us{
+    height: 100vh;
+    width:100vw;
+     background: rgba(0, 0, 0, 0.5);
+    position:fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.join-us{
+    background-color: white;
+    height:15rem;
+    width:25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.join-us select{
+    font-size: 1.1rem;
+    padding:0.3rem;
+    width:60%;
+     margin:0.7rem;
+}
+.join-us-cross{
+    padding:0.7rem;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:-4rem;
+    right:-4rem;
+    font-size: 1.3rem;
+}
+.font-text img{
+    height:140px;
+    width: 150px;
+}
+.join-us button{
+    background-color: #ED2939;
+    color:white;
+    padding:0.5rem;
+    width: 60%;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+   
+}
+.web-logo{
+    position: absolute;
+    top:1rem;
+    left:2rem;
+  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.web-logo img{
+    width:50px;
+    height: 45px;
+}
+.web-logo-name{
+    color:#45008e;
+    font-size: 0.9rem;
+   font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    padding:0.2rem;
+}
+/* font page section is ending here */
+
+
+
+
+
+/* teacher dashboard is starting from here */
+.dashboard-container{
+    height:100vh;
+    width:100vw;
+
+}
+.top-bar{
+    width:calc(100vw - 31%);
+    height:4rem;
+    left:30%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin:0.5rem;
+    border-radius: 1rem;
+
+}
+.side-bar{
+  
+    height:100vh;
+    width:30%;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.dash-web-logo{
+    position: absolute;
+    top:0.3rem;
+    left:2rem;
+  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.dash-web-logo img{
+    width:40px;
+    height: 35px;
+}
+.dash-web-logo-name{
+    color:#45008e;
+    font-size: 0.8rem;
+   font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    padding:0.2rem;
+}
+.top-web-logo{
+    position: absolute;
+    top:0.3rem;
+    left:2rem;
+  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.top-web-logo img{
+    width:40px;
+    height: 35px;
+}
+.top-web-logo-name{
+    color:#45008e;
+    font-size: 0.8rem;
+   font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    padding:0.2rem;
+}
+.feedback-nav{
+   
+    width: 98%;
+    position: absolute;
+    top:7rem;
+    
+}
+.side-bar-one{
+    background-color:white;
+    width: 90%;
+    height:3.5rem;
+    border-radius: 0.5rem;
+    margin:1rem;
+    padding:0.7rem;
+    display: flex;
+    align-items: center;
+    padding-left:0.5rem;
+    color:black;
+   margin-bottom: 1.1rem;
+
+}
+.sidebar-right-arrow{
+    position: absolute;
+    right:1rem;
+    top:0.5rem;
+    font-size: 1.3rem;
+    padding:1.1rem;
+    border-radius: 50%;
+    background-color: rgb(222, 222, 222);
+}
+.side-bar-one:hover{
+    background-color: rgb(238, 238, 238);
+}
+.side-bar-one p{
+    
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+   
+}
+.feedback-nav-icon{
+    padding:1.1rem;
+    border-radius: 50%;
+    margin:0.5rem;
+    background-color: rgb(222, 222, 222);
+    font-size: 1.3rem;
+   
+    
+}
+.right-nav-arrow{
+    font-size: 1.4rem;
+    color:rgb(72, 72, 72);
+    position: absolute;
+    right:1rem;
+}
+.top-r-arrow{
+     position: absolute;
+    left:1rem;
+   
+    font-size: 1.3rem;
+    padding:1.1rem;
+    border-radius: 50%;
+    background-color: rgb(222, 222, 222);
+}
+.noti-icon{
+    color:white;
+    position: absolute;
+    right:10rem;
+    font-size: 1.4rem;
+}
+.profile-img{
+    height:40px;
+    width: 40px;
+    position: absolute;
+    right:5rem;
+    border:2px solid white;
+    border-radius: 50%;
+}
+
+.middle-dashboard{
+    position: fixed;
+    background-color:white;
+    width: calc(100vw - 30%);
+    height: calc(100vh - 5rem);
+    left : 31%;
+    top:5rem;
+    padding:2rem;
+}
+.create-new{
+    background-color: #ED2939;
+    padding:0.5rem;
+    width:10rem;
+    color:white;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    border-radius: 0.4rem;
+    
+    border:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+}
+.no-form{
+    width: 94%;
+    height: 6rem;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    background-color: white;
+   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.no-form p{
+    font-size: 1.1rem;
+    font-family: sans-serif;
+
+}
+.middle-content{
+    
+    margin-top: 1rem;
+    height: calc(100vh - 5rem);
+  
+   
+}
+.form-created{
+    width: 94%;
+    margin-top: 1rem;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    height:85%;
+    margin-bottom: 3rem;
+    padding:1rem;
+    
+}
+.form-text-field{
+    width: 50%;
+   
+   
+}
+.form-text-field select{
+    width: 100%;
+    padding:0.5rem;
+    margin-bottom: 0.5rem;
+}
+.add-field{
+    width: 100%;
+    padding:0.5rem;
+   margin-bottom: 0.5rem;
+    background-color: rgb(0, 156, 0);
+    border:none;
+    color:white;
+    border-radius: 0.4rem;
+}
+.form-text-field input{
+    width: 95.5%;
+    padding:0.5rem;
+    margin-bottom:0.5rem;
+   
+
+}
+.form-text-field-button{
+   
+    width: 50%;
+    margin:0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.form-cancel{
+width:48%;
+background-color: white;
+border:2px solid green;
+padding:0.5rem;
+}
+.form-post{
+width:48%;
+background-color: green;
+border:2px solid green;
+padding:0.5rem;
+margin:0.5rem;
+color:white;
+}
+.form-text-field label{
+    float: left;
+    font-size: 1rem;
+    font-family: sans-serif;
+    margin-bottom: 0.3rem;
+    
+}
+.top-web-logo{
+    display: none;
+    
+}
+
+.display-none{
+    display: none;
+    
+}
+.top-r-arrow{
+    display: none;
+}
+.display-block-logo{
+    display: block;
+}
+.display-block{
+    display: flex;
+    left:6rem;
+}
+.increase-width{
+    width: 99%;
+    left:0;
+}
+/* teacher dashboard is ending here */
+
+
+
+
+
+
+
+
+
+/* student registration section is starting from here */
+.student-reg-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1rem; 
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.student-reg-container h2 {
+  grid-column: span 2; 
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+}
+
+.student-reg-container form {
+  display: contents; 
+}
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.stu-log-btn {
+  grid-column: span 2; 
+  text-align: center;
+}
+.not-account-log{
+   font-family: sans-serif;
+   
+    transform: translateX(50%);
+}
+/* student registration secton is ending here  */
+
+
+
+/* admin dashboard design is starting from here */
+.admin-dashboard{
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+}
+.left-admin-container{
+    background-color: #03011f;
+    width: 27%;
+    height: 100%;
+   position: fixed;
+}
+.admin-profile{
+    background-color:rgb(0, 0, 71);
+   
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding:1rem;
+}
+.admin-profile img{
+    height:58px;
+    width:58px;
+    border-radius: 50%;
+}
+.admin-profile-text p{
+    font-size: 1rem;
+    font-family: sans-serif;
+    color:white;
+    margin:0.5rem;
+    margin-left: 1rem;
+}
+.admin-left-main{
+    height:calc(100dvh - 10rem);
+    width: 100%;
+   
+}
+.admin-left-main li{
+    height: 4rem;
+    color:white;
+    display: flex;
+    align-items: center;
+   /* background-color:#231557; */
+    margin:0.5rem;
+    font-family: sans-serif;
+    padding:0.3rem;
+    padding-left: 1.5rem;
+    position: relative;
+    border-radius: 0.5rem;
+}
+.admin-left-main li:hover{
+    background-color: #050231;
+}
+.active-li-menu{
+    background-color: #050231;
+}
+.admin-left-arrow{
+    position: absolute;
+    right:2rem;
+}
+.admin-logout{
+    background-color: #050231;
+    height:3.5rem;
+    color:white;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    font-family: sans-serif;
+    gap:1rem;
+
+}
+
+
+.right-admin-container{
+   
+    width: 73%;
+    height: 100dvh;
+    margin-left: 27%;
+}
+.teacher-table-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-table-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.teacher-table th,
+.teacher-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-family: sans-serif;
+}
+
+.teacher-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.teacher-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.teacher-table tr:hover {
+  background-color: #f1f1f1;
+  transition: 0.2s ease-in-out;
+}
+
+.approve-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.approve-btn:hover {
+  background-color: #218838;
+}
+
+.reject-btn {
+  background-color:red;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+ 
+}
+.td-btn{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+.td-btn1{
+    display: flex;
+   
+    gap:0.4rem;
+}
+.reject-btn:hover {
+  background-color:rgb(188, 0, 0);
+}
+
+.admin-logout-container{
+    height:100dvh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin-logout-container-popup{
+    height:20rem;
+    width: 30rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:1.5rem;
+}
+.admin-logout-container-popup p{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+.admin-logout-container-popup-btn{
+   
+    display: flex;
+    gap:1rem;
+}
+.admin-logout-container-popup-btn button{
+    padding:0.7rem;
+    border:none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 0.3rem;
+}
+.admin-logout-container-popup-btn button:nth-child(2){
+    background-color: green;
+    color:white;
+}
+.admin-logout-container-popup-btn button:nth-child(1){
+    background-color: rgb(220, 220, 220);
+    
+}
+/* admin dashboard design is ending here */
+
+
+/* teacher dashboard is starting from here */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fbff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #fff;
+  padding: 1.5rem;
+  border-right: 1px solid #e4e4e4;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.panel {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.menu li:hover,
+.menu li.active {
+  background: #e6f0ff;
+  color: #007bff;
+}
+
+/* Main Section */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.welcome-card {
+  background: linear-gradient(90deg, #407bff, #5a9bff);
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.welcome-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* teacher dashboard is ending here */
