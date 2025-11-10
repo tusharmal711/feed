@@ -282,303 +282,834 @@ body{
 /* font page section is ending here */
 
 
+/* Teacher dashboard is starting from here */
 
-
-
-/* teacher dashboard is starting from here */
-.dashboard-container{
-    height:100vh;
-    width:100vw;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
 }
-.top-bar{
-    width:calc(100vw - 31%);
-    height:4rem;
-    left:30%;
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* LAYOUT */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR - FIXED */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.panel {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.menu li:hover {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.menu li.active {
+  background-color: #e0ecff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* MAIN CONTENT - Adjusted for fixed sidebar */
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 40px;
+  width: calc(100% - 260px);
+}
+
+/* Welcome Card */
+.welcome-card {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+}
+
+.welcome-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.welcome-card p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.stat-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Teacher dashboard is ending here */
+
+/* Teacher dashboard : Create form section start here */
+
+.create-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CreateForm Container */
+.create-form-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-header p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+/* Feedback Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Questions Section */
+.feedback-form h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Question Box */
+.question-box {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question-box input[type="text"],
+.question-box select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.question-box input[type="text"]:focus,
+.question-box select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.question-box select {
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Options Section */
+.options {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.options h4 {
+  font-size: 0.95rem;
+  color: #34495e;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.options input[type="text"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.options input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* Buttons */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button[type="submit"],
+.feedback-form > button:last-of-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+button[type="submit"]:hover,
+.feedback-form > button:last-of-type:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button[type="button"] {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+button[type="button"]:hover {
+  background: #d5dbdb;
+  transform: translateY(-1px);
+}
+
+.options button {
+  background: #3498db;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.options button:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* Preview Section */
+.preview-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+}
+
+.preview-section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.preview-section h3 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.preview-section > p {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Preview Question */
+.preview-question {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #27ae60;
+}
+
+.preview-question p {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.preview-question p b {
+  color: #27ae60;
+}
+
+.preview-question input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.preview-question input[type="radio"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.preview-question > div {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.preview-question > div:hover {
+  background: #f8f9fa;
+}
+
+.preview-question select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+}
+
+/* Success Message */
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-box {
+  animation: fadeIn 0.3s ease;
+}
+
+.preview-question {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Teacher dashboard : Create form section end here */
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 30px;
+  }
+
+  .create-form-container {
+    padding: 1.5rem;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+
+  .stat-card {
+    min-width: 180px;
+  }
+}
+
+/* Mobile View (Below 768px) */
+@media (max-width: 768px) {
+  /* Sidebar becomes top bar on mobile */
+  .sidebar {
     position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    margin:0.5rem;
-    border-radius: 1rem;
-
-}
-.side-bar{
-  
-    height:100vh;
-    width:30%;
-   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-.dash-web-logo{
-    position: absolute;
-    top:0.3rem;
-    left:2rem;
-  
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-.dash-web-logo img{
-    width:40px;
-    height: 35px;
-}
-.dash-web-logo-name{
-    color:#45008e;
-    font-size: 0.8rem;
-   font-family: 'Pacifico', cursive;
-    font-weight: 600;
-    padding:0.2rem;
-}
-.top-web-logo{
-    position: absolute;
-    top:0.3rem;
-    left:2rem;
-  
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-.top-web-logo img{
-    width:40px;
-    height: 35px;
-}
-.top-web-logo-name{
-    color:#45008e;
-    font-size: 0.8rem;
-   font-family: 'Pacifico', cursive;
-    font-weight: 600;
-    padding:0.2rem;
-}
-.feedback-nav{
-   
-    width: 98%;
-    position: absolute;
-    top:7rem;
-    
-}
-.side-bar-one{
-    background-color:white;
-    width: 90%;
-    height:3.5rem;
-    border-radius: 0.5rem;
-    margin:1rem;
-    padding:0.7rem;
-    display: flex;
-    align-items: center;
-    padding-left:0.5rem;
-    color:black;
-   margin-bottom: 1.1rem;
-
-}
-.sidebar-right-arrow{
-    position: absolute;
-    right:1rem;
-    top:0.5rem;
-    font-size: 1.3rem;
-    padding:1.1rem;
-    border-radius: 50%;
-    background-color: rgb(222, 222, 222);
-}
-.side-bar-one:hover{
-    background-color: rgb(238, 238, 238);
-}
-.side-bar-one p{
-    
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:0.5rem;
-   
-}
-.feedback-nav-icon{
-    padding:1.1rem;
-    border-radius: 50%;
-    margin:0.5rem;
-    background-color: rgb(222, 222, 222);
-    font-size: 1.3rem;
-   
-    
-}
-.right-nav-arrow{
-    font-size: 1.4rem;
-    color:rgb(72, 72, 72);
-    position: absolute;
-    right:1rem;
-}
-.top-r-arrow{
-     position: absolute;
-    left:1rem;
-   
-    font-size: 1.3rem;
-    padding:1.1rem;
-    border-radius: 50%;
-    background-color: rgb(222, 222, 222);
-}
-.noti-icon{
-    color:white;
-    position: absolute;
-    right:10rem;
-    font-size: 1.4rem;
-}
-.profile-img{
-    height:40px;
-    width: 40px;
-    position: absolute;
-    right:5rem;
-    border:2px solid white;
-    border-radius: 50%;
-}
-
-.middle-dashboard{
-    position: fixed;
-    background-color:white;
-    width: calc(100vw - 30%);
-    height: calc(100vh - 5rem);
-    left : 31%;
-    top:5rem;
-    padding:2rem;
-}
-.create-new{
-    background-color: #ED2939;
-    padding:0.5rem;
-    width:10rem;
-    color:white;
-    font-size: 1.1rem;
-    font-family: sans-serif;
-    border-radius: 0.4rem;
-    
-    border:none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:0.5rem;
-}
-.no-form{
-    width: 94%;
-    height: 6rem;
-    margin-top: 1rem;
-    border-radius: 0.4rem;
-    background-color: white;
-   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-.no-form p{
-    font-size: 1.1rem;
-    font-family: sans-serif;
-
-}
-.middle-content{
-    
-    margin-top: 1rem;
-    height: calc(100vh - 5rem);
-  
-   
-}
-.form-created{
-    width: 94%;
-    margin-top: 1rem;
-    
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow-y: scroll;
-    height:85%;
-    margin-bottom: 3rem;
-    padding:1rem;
-    
-}
-.form-text-field{
-    width: 50%;
-   
-   
-}
-.form-text-field select{
+    top: 0;
+    left: 0;
     width: 100%;
-    padding:0.5rem;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+    overflow-y: visible;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .panel {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .menu li {
+    padding: 8px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* Main content adjusts for top bar */
+  .main-content {
+    margin-left: 0;
+    margin-top: 70px;
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Welcome Card */
+  .welcome-card {
+    padding: 20px;
+  }
+
+  .welcome-card h2 {
+    font-size: 20px;
+  }
+
+  .welcome-card p {
+    font-size: 14px;
+  }
+
+  /* Stats */
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-card {
+    min-width: 100%;
+    padding: 20px;
+  }
+
+  /* Create Form Container */
+  .create-form-container {
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+  }
+
+  /* Question Box */
+  .question-box {
+    padding: 1rem;
+  }
+
+  /* Buttons */
+  button {
+    width: 100%;
+    margin-right: 0;
     margin-bottom: 0.5rem;
+  }
+
+  /* Preview Section */
+  .preview-section {
+    padding: 1.5rem;
+  }
+
+  .preview-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .preview-question {
+    padding: 1rem;
+  }
 }
-.add-field{
+
+/* Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .menu li {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .main-content {
+    padding: 15px;
+    margin-top: 65px;
+  }
+
+  .create-form-container {
+    padding: 1rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .question-box {
+    padding: 0.75rem;
+  }
+
+  button {
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .welcome-card {
+    padding: 15px;
+  }
+
+  .welcome-card h2 {
+    font-size: 18px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .main-content {
+    margin-top: 60px;
+  }
+
+  .sidebar {
+    padding: 10px 15px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
     width: 100%;
-    padding:0.5rem;
-   margin-bottom: 0.5rem;
-    background-color: rgb(0, 156, 0);
-    border:none;
-    color:white;
-    border-radius: 0.4rem;
-}
-.form-text-field input{
-    width: 95.5%;
-    padding:0.5rem;
-    margin-bottom:0.5rem;
-   
+  }
 
-}
-.form-text-field-button{
-   
-    width: 50%;
-    margin:0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.form-cancel{
-width:48%;
-background-color: white;
-border:2px solid green;
-padding:0.5rem;
-}
-.form-post{
-width:48%;
-background-color: green;
-border:2px solid green;
-padding:0.5rem;
-margin:0.5rem;
-color:white;
-}
-.form-text-field label{
-    float: left;
-    font-size: 1rem;
-    font-family: sans-serif;
-    margin-bottom: 0.3rem;
-    
-}
-.top-web-logo{
+  button {
     display: none;
-    
+  }
 }
 
-.display-none{
-    display: none;
-    
+/* Teacher profile section start here  */
+
+.profile-container {
+  background: #f8faff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-.top-r-arrow{
-    display: none;
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-.display-block-logo{
-    display: block;
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #4f46e5;
 }
-.display-block{
-    display: flex;
-    left:6rem;
+
+.profile-info {
+  flex: 1;
+  margin-left: 1.5rem;
 }
-.increase-width{
-    width: 99%;
-    left:0;
+
+.profile-info h2 {
+  margin: 0;
+  color: #111827;
 }
-/* teacher dashboard is ending here */
+
+.profile-info p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.edit-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #3730a3;
+}
+
+.profile-details {
+  margin-top: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.profile-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #374151;
+}
+
+.profile-field input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #f9fafb;
+}
+
+.profile-field input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  margin-top: 1.5rem;
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #15803d;
+}
+
+
+/* For Profile Picture  */
+
+.profile-avatar-section {
+  text-align: center;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #4f46e5;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.change-photo-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.4rem;
+}
+
+
+
+/* teacher profile section end here */
 
 
 
@@ -698,6 +1229,8 @@ color:white;
     padding-left: 2rem;
     font-family: sans-serif;
     gap:1rem;
+    
+
 
 }
 
@@ -798,7 +1331,7 @@ color:white;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    z-index: 1;
+    z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -851,7 +1384,9 @@ color:white;
 
 /* Sidebar */
 .sidebar {
+  position: fixed;
   width: 240px;
+  height: 100dvh;
   background: #fff;
   padding: 1.5rem;
   border-right: 1px solid #e4e4e4;
@@ -962,3 +1497,186 @@ color:white;
 
 
 /* teacher dashboard is ending here */
+
+
+
+
+/* teacher view from is starting from here */
+/* View Forms Container */
+.view-container {
+  padding: 2rem;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.form-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-card button {
+  margin-top: 10px;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+
+
+}
+/* teacher view from is ending here */
+
+
+
+/* teacher edit form is starting from here */
+.edit-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #2b4b6f;
+  margin-bottom: 25px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0056d2;
+  box-shadow: 0 0 5px rgba(0, 85, 210, 0.3);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.question-box {
+  background: #f8faff;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #e0e6ef;
+  margin-bottom: 10px;
+}
+
+.question-box input,
+.question-box select {
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.options {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-option-btn {
+  background: #e8f0fe;
+  color: #0056d2;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.add-option-btn:hover {
+  background: #0056d2;
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-question-btn,
+.save-btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-question-btn {
+  background-color: #f4f6fb;
+  color: #0056d2;
+}
+
+.save-btn {
+  background-color: #0056d2;
+  color: white;
+}
+
+.add-question-btn:hover {
+  background-color: #dfe7fa;
+}
+
+.save-btn:hover {
+  background-color: #003d99;
+}
+
+.success-message {
+  text-align: center;
+  color: green;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.loading-text {
+  text-align: center;
+  color: gray;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+/* teacher edit form is ending here */

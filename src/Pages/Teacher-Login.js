@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../CSS/index.css";
+import Cookies from "js-cookie";
 
 const TeacherLog = () => {
   const navigate = useNavigate();
@@ -15,42 +16,52 @@ const TeacherLog = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:3001/teacher/loginTeacher", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // allow cookie from backend
-        body: JSON.stringify(formData),
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch("http://localhost:3001/teacher/loginTeacher", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include", // allows backend cookie (like JWT)
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (res.ok && !data.error) {
+      // Save emailId in both sessionStorage and cookie
+      sessionStorage.setItem("emailId", formData.emailId);
+       localStorage.setItem("emailId", formData.emailId);
+
+      // ✅ Set cookie that expires in 1 day (you can change it)
+      Cookies.set("teacherEmail", formData.emailId, {
+        expires: 7, // 1 day
+        secure: true, // only sent over HTTPS
+        sameSite: "Strict",
       });
 
-      const data = await res.json();
+      toast.success(data.message || "Login successful!", {
+        position: "top-right",
+      });
 
-      if (res.ok && !data.error) {
-         sessionStorage.setItem("emailId", formData.emailId);
-        toast.success(data.message || "Login successful!", {
-          position: "top-right",
-        });
+      console.log("Teacher Login response:", data);
 
-        console.log("Teacher Login response:", data);
-
-        // redirect after toast
-        setTimeout(() => {
-          navigate("/teacher_dashboard");
-        }, 1500);
-      } else {
-        toast.error(data.error || data.message || "Invalid credentials", {
-          position: "top-right",
-        });
-      }
-    } catch (err) {
-      console.error(err);
-      toast.error("Error logging in", { position: "top-right" });
+      // Redirect after toast
+      setTimeout(() => {
+        navigate("/teacher_dashboard");
+      }, 1500);
+    } else {
+      toast.error(data.error || data.message || "Invalid credentials", {
+        position: "top-right",
+      });
     }
-  };
+  } catch (err) {
+    console.error(err);
+    toast.error("Error logging in", { position: "top-right" });
+  }
+};
 
   return (
     <div className="main-container">

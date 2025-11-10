@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../CSS/index.css";
-
+import Cookies from "js-cookie";
 const StuLog = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -33,8 +33,24 @@ const StuLog = () => {
       toast.success(data.message || "Login successful!", { position: "top-right" });
       console.log("Login response:", data);
 
+
+
+       sessionStorage.setItem("studentEmail", formData.emailId);
+              localStorage.setItem("studentEmail", formData.emailId);
+       
+             // ✅ Set cookie that expires in 1 day (you can change it)
+             Cookies.set("studentEmail", formData.emailId, {
+               expires: 7, // 1 day
+               secure: true, // only sent over HTTPS
+               sameSite: "Strict",
+             });
+
+
+
+
+
       setTimeout(() => {
-        navigate("/student-dashboard");
+        navigate("/student_dashboard");
       }, 1500);
     } else {
       toast.error(data.error || data.message || "Invalid credentials", {
