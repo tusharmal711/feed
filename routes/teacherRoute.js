@@ -1,14 +1,25 @@
-const express= require("express");
+const express = require("express");
 const router = express.Router();
-const { registerTeacher, loginTeacher ,logoutTeacher,fetchTeacherData } = require("../controllers/teacherController");
-//const{teacherMiddleware}=require("../middleware/teacherMiddleware");
-
-router.post("/registerTeacher",registerTeacher);
-
-router.post("/loginTeacher",loginTeacher);
-
-router.post("/logoutTeacher",logoutTeacher);
-
-router.post("/fetchTeacherData",fetchTeacherData);
-module.exports=router;
-//router.post("/registerTeacher",authMiddleware,registerTeacher);
+// const upload = require("../middleware/uploadMiddleware.js");
+const {
+  registerTeacher,
+  loginTeacher,
+  logoutTeacher,
+  fetchTeacherData,
+  updateTeacher,
+  updateProfilePic
+} = require("../controllers/teacherController.js");
+const {createFeedbackForm,getTeacherForms,deleteForm,updateForm,getFormById, updateFormById, getQuestions}=require("../controllers/feedbackFormController.js");
+router.post("/registerTeacher", registerTeacher);
+router.post("/loginTeacher", loginTeacher);
+router.post("/logoutTeacher", logoutTeacher);
+router.post("/fetchTeacherData", fetchTeacherData);
+router.put("/updateTeacher", updateTeacher);
+router.post("/createForm",createFeedbackForm);
+// router.put("/updateProfilePic", upload.single("profilePic"), updateProfilePic);
+router.get("/teacherForms/:emailId", getTeacherForms);
+router.delete("/deleteForm/:id", deleteForm);
+router.put("/updateForm/:id", updateFormById);
+router.get("/form/:id", getFormById);
+router.get("/getQuestions/:id", getQuestions);
+module.exports = router;

@@ -1,36 +1,21 @@
 const mongoose = require("mongoose");
 
 const FeedbackFormSchema = new mongoose.Schema({
-  teacher: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "teacher",
+  emailId: {
+    type:String , 
     required: true,
   },
-  description: {
-    type: String,
-    required: true,
-  },
-  department: {
-    type: String,
-    required: true,
-  },
-  semester: {
-    type: String,
-    required: true,
-  },
-  section: {
-    type: String,
-    required: true,
-  },
+  formTitle: { type: String, required: true },
+  courseName: { type: String, required: true },
+  semester: { type: String, required: true },
+  description: { type: String },
   questions: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Question",
-      required: true,
     },
   ],
   createdAt: { type: Date, default: Date.now },
 });
 
-const FeedbackForm = mongoose.model("FeedbackForm", FeedbackFormSchema);
-module.exports = FeedbackForm;
+module.exports = mongoose.model("FeedbackForm", FeedbackFormSchema);

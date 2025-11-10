@@ -1,10 +1,16 @@
 const mongoose = require("mongoose");
 
 const QuestionSchema = new mongoose.Schema({
-  text: { type: String, required: true }, // actual question text
-  createdAt: { type: Date, default: Date.now },
+  questionText: { type: String, required: true },
+  questionType: {
+    type: String,
+    enum: ["dropdown", "mcq", "text"],
+    required: true,
+  },
+  options: {
+    type: [String],
+    default: [],
+  },
 });
 
-const Question = mongoose.model("Question", QuestionSchema);
-
-module.exports = Question;
+module.exports = mongoose.model("Question", QuestionSchema);
